@@ -23,7 +23,7 @@ class _SelectionPlayersState extends State<SelectionPlayers> {
         player.name!,
         style: TextStyle(
             fontSize: 18,
-            decoration: player.status == 0
+            decoration: player.status != 0
                 ? TextDecoration.none
                 : TextDecoration.lineThrough),
       ),
@@ -104,11 +104,11 @@ class _SelectionPlayersState extends State<SelectionPlayers> {
 
 ////////////////////////////////////////////////////////////////
 
-  _submit() {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-    }
-  }
+  // _submit() {
+  //   if (_formKey.currentState!.validate()) {
+  //     _formKey.currentState!.save();
+  //   }
+  // }
 
 ///////////////////////////////////////////////////////////////
   @override
@@ -170,7 +170,7 @@ class _SelectionPlayersState extends State<SelectionPlayers> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ResultPage(),
+                  builder: (context) => ResultPage(group: group!),
                 ),
               );
             },

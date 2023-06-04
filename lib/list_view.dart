@@ -58,30 +58,36 @@ class _ListViewPlayersState extends State<ListViewPlayers> {
     return FutureBuilder(
         future: _playerList,
         builder: (context, AsyncSnapshot snapshot) {
-          return ListView.builder(
-              itemCount: snapshot.data != null ? snapshot.data.length + 1 : 0,
-              itemBuilder: (BuildContext context, int index) {
-                if (index == 0) {
-                  return Container(
-                    child: const Row(
-                      children: [
-                        Text(
-                          "All Players",
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
+          if (snapshot.data != null) {
+            return ListView.builder(
+                itemCount: snapshot.data != null ? snapshot.data.length + 1 : 1,
+                itemBuilder: (BuildContext context, int index) {
+                  if (index == 0) {
+                    return Container(
+                      child: Row(
+                        children: [
+                          Text(
+                            snapshot.data != null ? "All Players" : "No data",
+                            style: const TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                  );
-                } else {
-                  return _buildItem(snapshot.data[index - 1]);
-                }
-              });
+                          const SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return _buildItem(snapshot.data[index - 1]);
+                  }
+                });
+          } else {
+            return const Center(
+              child: CircleAvatar(child: Text("No data")),
+            );
+          }
         });
   }
 }

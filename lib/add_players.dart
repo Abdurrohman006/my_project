@@ -62,6 +62,9 @@ class _AddPlayersState extends State<AddPlayers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.player == null ? "Add Player" : "Change player"),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
