@@ -13,7 +13,7 @@ class SelectionPlayers extends StatefulWidget {
 
 class _SelectionPlayersState extends State<SelectionPlayers> {
   int? group = 3;
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
   late Future<List<Player>> _playerList;
 
   /////////////////////////////////////////////////////////////////
@@ -128,6 +128,7 @@ class _SelectionPlayersState extends State<SelectionPlayers> {
 
 //////////////////////////////////////////////////////////////////////////////
 
+  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return SingleChildScrollView(
@@ -174,9 +175,9 @@ class _SelectionPlayersState extends State<SelectionPlayers> {
                 ),
               );
             },
-            child: Text('Natijani ko\'rsatish'),
+            child: const Text('Natijani ko\'rsatish'),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
         ],
       ),
     );

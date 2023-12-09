@@ -67,13 +67,9 @@ class _ResultPageState extends State<ResultPage> {
       }
       setState(() {});
     }
-
-    print("_____________________________ismlar1 + $data");
   }
 
   Widget _ListBuild(List listlar) {
-    print(
-        "__________+++++++++++++++++++++ _listBUild ishladiiiii__________ $listlar");
     return Expanded(
       child: ListView.builder(
         shrinkWrap: true,
@@ -104,7 +100,6 @@ class _ResultPageState extends State<ResultPage> {
           data.add(eachPlayer.name.toString());
         }
         // data.shuffle();
-        print(data);
         buildItem();
         const Duration(seconds: 1);
 
