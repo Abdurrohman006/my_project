@@ -83,7 +83,7 @@ class _AddPlayersState extends State<AddPlayers> {
                         decoration: InputDecoration(labelText: "Name"),
                         onSaved: (input) => _name = input,
                         validator: (input) => input!.trim().isEmpty
-                            ? "Please, Enter player Name"
+                            ? "Please, Enter player Nameee"
                             : null,
                         initialValue: _name,
                       ),
